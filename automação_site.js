@@ -28,7 +28,7 @@ async function cadastrar_usuario(driver) {
     await sleep(3000);
 
     let usernameField = await driver.wait(until.elementLocated(By.name("usernameRegisterPage")));
-    await usernameField.sendKeys("exemplo_06");
+    await usernameField.sendKeys("exemplo_01");
 
     await driver.findElement(By.name("passwordRegisterPage")).sendKeys("Senha.123");
     await driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("Senha.123");
