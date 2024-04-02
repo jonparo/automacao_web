@@ -2,7 +2,7 @@ const { By, until } = require('selenium-webdriver');
 const { sleep } = require('./utils');
 const preenchimentoCadastro = require('./preenchimentoCadastro');
 
-async function cadastrarUsuario(driver) {
+async function cadastrarUseEmailInvalido(driver) {
     await driver.get("https://advantageonlineshopping.com/#/");
     await sleep(3000);
     await driver.findElement(By.id("menuUser")).click();
@@ -12,8 +12,8 @@ async function cadastrarUsuario(driver) {
 
     await driver.findElement(By.name("passwordRegisterPage")).sendKeys("Senha.123");
     await driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("Senha.123");
-    await driver.findElement(By.name("emailRegisterPage")).sendKeys("exemplo@gmail.com");
+    await driver.findElement(By.name("emailRegisterPage")).sendKeys("exemplo");
     await preenchimentoCadastro(driver);
 }
 
-module.exports = cadastrarUsuario;
+module.exports = cadastrarUseEmailInvalido;

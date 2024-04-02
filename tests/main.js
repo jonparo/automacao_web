@@ -6,6 +6,8 @@ const cadastrarUsuario = require('../pages/cadastrarUsuario');
 const adicionarAoCarrinho = require('../pages/adicionarAoCarrinho');
 const fazerCompra = require('../pages/fazerCompra');
 const enviarMensagemParaSuporte = require('../pages/enviarMensagemParaSuporte');
+const cadastrarUseSenhaInvalida = require('../pages/cadastrarUseSenhaInvalida');
+const cadastrarUseEmailInvalido = require('../pages/cadastrarUseEmailInvalido');
 
 (async function main() {
     let chromeOptions = new Options();
@@ -14,6 +16,8 @@ const enviarMensagemParaSuporte = require('../pages/enviarMensagemParaSuporte');
     let driver = await new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
 
     try {
+        await cadastrarUseEmailInvalido(driver);
+        await cadastrarUseSenhaInvalida(driver);
         await cadastrarUsuario(driver);
         await adicionarAoCarrinho(driver);
         await fazerCompra(driver);
