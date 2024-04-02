@@ -1,4 +1,4 @@
-const { By, until } = require('selenium-webdriver');
+const { By, until, Key} = require('selenium-webdriver');
 const { sleep } = require('./utils');
 
 class HomePage {
